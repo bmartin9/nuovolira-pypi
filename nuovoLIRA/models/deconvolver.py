@@ -13,7 +13,7 @@ import scipy
 import matplotlib.pyplot as plt 
 import scipy.stats as stats
 import seaborn as sns
-from src.data.Ising_simulator import * 
+from nuovoLIRA.data.Ising_simulator import * 
 
 
 class Sample_beta():
