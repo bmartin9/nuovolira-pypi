@@ -16,6 +16,16 @@ pip install nuovoLIRA
 # Source Code
 The source code is currently hosted on GitHub at [https://github.com/bmartin9/nuovolira-pypi](https://github.com/bmartin9/nuovolira-pypi).
 
+# Dependencies 
+The external packages needed to use nuovoLIRA are listed in the requirements.txt file at [https://github.com/bmartin9/nuovolira-pypi](https://github.com/bmartin9/nuovolira-pypi). 
+
+To create a python virtual environment and install these requirements, download requirements.txt from [https://github.com/bmartin9/nuovolira-pypi](https://github.com/bmartin9/nuovolira-pypi) and do for example 
+
+``` 
+python -m venv \path\to\myenv
+pip install -r /path/to/requirements.txt
+```
+
 # Example Usage 
 To sample from the conditional distribution of $Z$ (equation (33) in  [https://nuovolira.tiiny.site/](https://nuovolira.tiiny.site/)) using the Swendsen Wang algorithm do
 
@@ -37,6 +47,9 @@ Z_sampler = Sample_Z(random_state=random_state,
 
 Z_new = Z_sampler.Z_update(Z_init) 
 ```
+
+# Contact 
+For issues/discussions please email b.martin22@imperial.ac.uk
 
 Project Organization
 ------------
