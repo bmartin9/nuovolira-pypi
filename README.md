@@ -1,7 +1,42 @@
 nuovoLIRA
 ==============================
 
-A Bayesian procedure to delineate the boundary of an extended astronomical object
+# What is it? 
+A method to implement the Bayesian model described here: [https://nuovolira.tiiny.site/](https://nuovolira.tiiny.site/).
+
+# Installation 
+```
+pip install --upgrade pip 
+pip install nuovoLIRA 
+``` 
+
+# Main Features 
+- Algorithms that sample from the conditional distributions of the NuovoLIRA model 
+
+# Source Code
+The source code is currently hosted on GitHub at [https://github.com/bmartin9/nuovolira-pypi](https://github.com/bmartin9/nuovolira-pypi).
+
+# Example Usage 
+To sample from the conditional distribution of $Z$ (equation (33) in  [https://nuovolira.tiiny.site/](https://nuovolira.tiiny.site/)) using the Swendsen Wang algorithm do
+
+```
+from nuovoLIRA.models.deconvolver import * 
+from numpy.random import default_rng
+
+random_state = default_rng(seed=SEED) 
+Z_init = np.random.choice([0, 1], size=(10,10), p=[1./3, 2./3])
+data = np.random.randint(0,40,size=(10,10))
+
+Z_sampler = Sample_Z(random_state=random_state,
+                        initial_Z = Z_init,
+                        beta = 2,
+                        lam_b = 1,
+                        lam_e = 20,
+                        y = data
+)
+
+Z_new = Z_sampler.Z_update(Z_init) 
+```
 
 Project Organization
 ------------
